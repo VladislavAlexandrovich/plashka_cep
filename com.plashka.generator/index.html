@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plashka</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="header">
+      <h1>Plashka</h1>
+    </div>
+    <div id="input-section">
+      <input type="text" id="text-input" placeholder="Enter text" />
+    </div>
+    <div id="presets-section">
+      <div class="preset-grid">
+        <div class="preset-card" data-preset="glass">
+          <div class="preset-icon glass-icon"></div>
+          <span class="preset-label">Glass</span>
+        </div>
+        <div class="preset-card" data-preset="3d">
+          <div class="preset-icon three-d-icon"></div>
+          <span class="preset-label">3D</span>
+        </div>
+        <div class="preset-card" data-preset="neon">
+          <div class="preset-icon neon-icon"></div>
+          <span class="preset-label">Neon</span>
+        </div>
+        <div class="preset-card" data-preset="minimal">
+          <div class="preset-icon minimal-icon"></div>
+          <span class="preset-label">Minimal</span>
+        </div>
+      </div>
+    </div>
+    <div id="status"></div>
+    <button id="create-btn" class="create-btn" disabled>Create</button>
+  </div>
+  <script src="CSInterface.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+/* ===== ГЛОБАЛЬНЫЕ СТИЛИ ===== */
+/* Задание тёмной темы, сброс отступов, базовый шрифт */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background: #1e1e1e;
+  user-select: none;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  gap: 16px;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+
+#header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* ===== ПОЛЕ ВВОДА ===== */
+
+#input-section {
+  width: 100%;
+}
+
+#text-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #ffffff;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+#text-input::placeholder {
+  color: #6a6a6a;
+}
+
+#text-input:focus {
+  border-color: #5a5a5a;
+}
+
+/* ===== СЕТКА ПРЕСЕТОВ 2x2 ===== */
+
+#presets-section {
+  width: 100%;
+}
+
+.preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.preset-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 12px;
+  background: #2a2a2a;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.preset-card:hover {
+  background: #3a3a3a;
+}
+
+
+.preset-card.selected.glass {
+  border-color: #4fc3f7;
+  box-shadow: 0 0 12px rgba(79, 195, 247, 0.3);
+}
+
+.preset-card.selected.three-d {
+  border-color: #2979ff;
+  box-shadow: 0 0 12px rgba(41, 121, 255, 0.3);
+}
+
+.preset-card.selected.neon {
+  border-color: #ff00ff;
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.3);
+}
+
+.preset-card.selected.minimal {
+  border-color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+
+/* ===== ИКОНКИ ПРЕСЕТОВ ===== */
+/* Визуальные миниатюры для каждого стиля */
+
+.preset-icon {
+  width: 48px;
+  height: 36px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.glass-icon {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.three-d-icon {
+  background: #ffffff;
+  position: relative;
+}
+
+.three-d-icon::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 100%;
+  height: 100%;
+  background: #0033aa;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.neon-icon {
+  background: #0a0a0a;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 8px #ff00ff;
+}
+
+.minimal-icon {
+  background: transparent;
+  border-left: 4px solid #ffffff;
+  border-radius: 0;
+}
+
+.preset-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #cccccc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== КНОПКА CREATE ===== */
+
+.create-btn {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  color: #ffffff;
+  background: #4a9eff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.create-btn:hover:not(:disabled) {
+  background: #3a8eef;
+}
+
+.create-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+#status {
+  font-size: 12px;
+  color: #ff6b6b;
+  min-height: 18px;
+  text-align: center;
+}
+
